@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>JS轮播图</title>
+    <script>
+        window.onload = function() {
+            var list = document.getElementById('list');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var buttons = document.getElementById('button').getElementsByTagName('span');
+            var container = document.getElementById('container');
+            var index = 1;
+            function animate(offset) {
+                //获取的是style.left，是相对左边获取距离，所以第一张图后style.left都为负值，
+                //且style.left获取的是字符串，需要用parseInt()取整转化为数字。
+                var newLeft = parseInt(list.style.left) + offset;
+                list.style.left = newLeft + 'px';
+                if(newLeft>-800){
+                    list.style.left = -4000+'px';
+                }
+                if(newLeft<-4000){
+                    list.style.left = -800+'px';
+                }
+            }
+            function showbutton(){
+                for(var i = 0;i<buttons.length;i++){
+                    if(buttons[i].className=='on'){
+                        buttons[i].className = ' ';
+                    }
+                }
+                buttons[index-1].className = 'on';
+            }
+            for(let i = 0;i<buttons.length;i++){
+                //立即执行函数
+                (function(i){
+                    buttons[i].onclick = function(){
+                        var buttonindex = parseInt(this.getAttribute('index'));
+                        var offset = (index-buttonindex)*800;
+                        animate(offset);
+                        index = buttonindex;
+                        showbutton();
+                    }
+
+               })(i)
+
+            }
+            prev.onclick = function() {
+                index-=1;
+                if(index<1){
+                    index = 5;
+                }
+                showbutton();
+                animate(800);
+            };
+            next.onclick = function() {
+                index +=1;
+                if(index >5){
+                    index = 1;
+                }
+                showbutton();
+                animate(-800);
+            };
+            var timer;
+            function play() {
+                timer = setInterval(function () {
+                    next.onclick()
+                }, 1500)
+            }
+            play();
+            function stop(){
+                clearInterval(timer);
+            }
+            container.onmouseover = stop;
+            container.onmouseout = play;
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="list" style="left: -800px">
+            <img src="img/5.JPG" width="800px" height="600px">
+            <img src="img/1.JPG" width="800px" height="600px">
+            <img src="img/2.JPG" width="800px" height="600px">
+            <img src="img/3.JPG" width="800px" height="600px">
+            <img src="img/4.JPG" width="800px" height="600px">
+            <img src="img/5.JPG" width="800px" height="600px">
+            <img src="img/1.JPG" width="800px" height="600px">
+        </div>
+        <div id="button">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:" id="next" class="arrow">&gt;</a>
+    </div>
+</body>
+</html>
