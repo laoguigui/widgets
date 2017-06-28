@@ -1,0 +1,21 @@
+#container{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-sizing: content-box;
+}
+.piece{
+    float: left;
+    width:190px;
+    height: 150px;
+    border: 2px salmon solid ;
+    font-family: cursive;
+    color: blue;
+    font-size: 80px;
+    text-align: center;
+    line-height: 150px;
+}
+.row{
+    clear: both;
+    overflow: hidden;
+}
