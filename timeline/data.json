@@ -1,0 +1,72 @@
+
+{
+    "timeline":
+    {
+        "headline":"Mingchen Yu & Guili Zhou",
+        "type":"default",
+		"startDate":"2015,11",
+		"text":"<i><span class='c1'>START</span> & <span class='c2'>LOVE</span></i>",
+		"asset":
+        {
+            "media":"assets/img/1.jpg",
+            "credit":"",
+            "caption":""
+        },
+        "date": [
+            {
+                "startDate":"2015,12",
+                "headline":"Birthday",
+                "text":"",
+                "asset":{
+                    "media":"assets/img/2.jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2016,5",
+                "headline":"In HangZhou",
+                "text":"",
+                "asset":
+                {
+                    "media":"assets/img/3.jpg",
+                    "credit":"<a href='http://dribbble.com/shots/401334-Sidebar'>by Chris Brauckmuller</a>",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2016,8",
+                "headline":"In ZhangJiaJie",
+                "text":"",
+                "asset":
+                {
+                    "media":"assets/img/4.jpg",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2017,3",
+                "headline":"In ShaoXing",
+                "text":"",
+                "asset":
+                {
+                    "media":"assets/img/5.JPG",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2017,5",
+                "headline":"In BeiJing",
+                "text":"",
+                "asset":
+                {
+                    "media":"assets/img/6.JPG",
+                    "credit":"",
+                    "caption":""
+                }
+            }
+        ]
+    }
+}
